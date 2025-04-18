@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct TaskMeApp: App {
+    @StateObject var itemController = ItemController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                Home()      
+            }
+            .navigationViewStyle(.stack)
+            .environmentObject(itemController)
         }
     }
 }
